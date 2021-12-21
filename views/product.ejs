@@ -1,0 +1,32 @@
+<%- include('header') %>
+
+<div class="card">
+  <h2>Name: <span><%= name %> </span></h2>
+</div>
+<div class="card">
+  <h2>Description:</h2>
+  <p><%= description %> </p>
+</div>
+<div class="card">
+  <h2>SKU: <span><%= sku %> </span></h2>
+</div>
+<div class="card">
+  <h2>Price: <span><%= price %> </span></h2>
+</div>
+<div class="card d-lg-flex">
+  <button data-id=<%= id %> class="d-inline p-2 btn btn-outline-success" id="inc">Increment (+)</button>
+  <button data-id=<%= id %> class="d-inline p-2 btn btn-outline-danger" id="dec">Decrement (-)</button>
+</div>
+<div class="card">
+  <div class="row">
+    <% for( let i = 0; i < images.length; i++ ) { %>
+    <div class="col-lg-4">
+      <img class="img-fluid" src=<%= images[i].images %> alt="<%= images[i].id %>">
+    </div>
+    <% } %>
+  </div>
+</div>
+<script src="/js/incrementCart.js" type="module"></script>
+<script src="/js/decrementCart.js" type="module"></script>
+
+<%- include('footer') %>
